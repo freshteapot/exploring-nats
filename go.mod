@@ -1,4 +1,4 @@
-module github.com/freshteapot/k8s-nats
+module github.com/freshteapot/exploring-nats
 
 go 1.14
 

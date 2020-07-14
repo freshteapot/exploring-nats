@@ -15,8 +15,8 @@ limitations under the License.
 */
 package main
 
-import "github.com/freshteapot/k8s-nats/cmd"
+import "github.com/freshteapot/exploring-nats/cmd"
 
 func main() {
-  cmd.Execute()
+	cmd.Execute()
 }

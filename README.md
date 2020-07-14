@@ -27,7 +27,14 @@ go run main.go publish
 # Run streaming server
 
 ```sh
-docker run -p 4222:4222 -p 8222:8222 nats-streaming:alpine3.12 --max_age 10s
+docker run \
+-p 4222:4222 \
+-p 8222:8222 \
+-v /tmp/nats-store/:/tmp/nats-store/ nats-streaming:alpine3.12 \
+--max_age 10s \
+--store=FILE \
+--dir=/tmp/nats-store \
+--file_auto_sync=1ms
 ```
 
 ## Publish
@@ -44,6 +51,8 @@ go run main.go subscriberStreaming test
 go run main.go subscriberStreaming test1
 ```
 
+
+# Run server
 
 # Reference
 - [Example of using nats to do things on the fly]()https://github.com/mycodesmells/golang-examples/blob/master/nats/pubsub/blog-generator/main.go

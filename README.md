@@ -1,14 +1,4 @@
 # Exploring using nats
-
-# Question
-- Can I use it, to decouple the webservice (learnalist) from the blog generation (gohugo)?
-- Can I share the same signature to not use nats if I dont want to.
-    - I can embed the service, which is an option I do with hugo.
-    - Maybe I shouldn't embed at all, as hugo is a command line tool, as stan can be too.
-    - I like the flag option "render-content-via-events=true".
-- Will decoupling speed up hugo rendering?
-- Will all this decoupling make learnalist hugely over engineered? :P
-
 # Run server
 ```sh
 docker run -p 4222:4222 -p 8222:8222 nats:alpine3.10
@@ -51,8 +41,15 @@ go run main.go subscriberStreaming test
 go run main.go subscriberStreaming test1
 ```
 
+# Question
+- Can I use it, to decouple the webservice (learnalist) from the blog generation (gohugo)?
+- Can I share the same signature to not use nats if I dont want to.
+    - I can embed the service, which is an option I do with hugo.
+    - Maybe I shouldn't embed at all, as hugo is a command line tool, as stan can be too.
+    - I like the flag option "render-content-via-events=true".
+- Will decoupling speed up hugo rendering?
+- Will all this decoupling make learnalist hugely over engineered? :P
 
-# Run server
 
 # Reference
 - [Example of using nats to do things on the fly]()https://github.com/mycodesmells/golang-examples/blob/master/nats/pubsub/blog-generator/main.go
